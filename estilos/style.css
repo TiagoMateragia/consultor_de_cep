@@ -1,0 +1,77 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+#cabecalho{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fcefbb;
+    box-shadow: 3px 3px 5px #0000004a;
+}
+.logo{
+    width: 100%;
+    max-width: 150px;
+}
+#trilho{
+    width: 100%;
+    max-width: 100px;
+    max-height: 40px;
+    background-color: #e1dcdc;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-right: 10px;
+}
+.botao_tema{
+    position: absolute;
+    margin: 4px;
+    width: 30px;
+    height: 30px;
+    background-color: #a5aaaa;
+    border-radius: 20px;
+}
+.botao_tema:hover{
+    cursor: pointer;
+}
+#bloco_geral{
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+    align-items: center;
+    justify-content: center;
+}
+.bloco_conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 200px;
+    background-color: #fcefbb;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px #0000004a, -3px -3px 5px #0000004a;
+}
+input{
+    height: 30px;
+    width: 200px;
+    border: 1px solid #fcd022;
+    border-radius: 20px;
+    outline: none;
+    transition: .5s;
+}
+input:focus{
+    border: 1px solid #fcd022;
+    box-shadow: 0 0 5px #fcd022;
+    transition: .5s;
+}
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    transition: .5s;
+    background-color: #f9e699;
+}
+button:hover{
+    scale: 1.1;
+    transition: .5s;
+}
