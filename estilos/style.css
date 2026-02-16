@@ -1,36 +1,61 @@
 html, body{
     padding: 0;
     margin: 0;
+    background-color: #F7E7CE;
+    transition: .5s;
+}
+html.escuro, body.escuro{
+    background-color: #090800;
+    transition: .5s;
 }
 #cabecalho{
     display: flex;
     justify-content: space-between;
-    background-color: #fcefbb;
+    background-color: #102C26;
     box-shadow: 3px 3px 5px #0000004a;
+    transition: .5s;
+}
+#cabecalho.escuro{
+    background-color: #0b0510;
+    transition: .5s;
+    
 }
 .logo{
     width: 100%;
     max-width: 150px;
+    transition: opacity 0.3s ease;
 }
 #trilho{
     width: 100%;
     max-width: 100px;
     max-height: 40px;
-    background-color: #e1dcdc;
+    background-color: #F7E7CE;
     border-radius: 20px;
     margin-top: 50px;
     margin-right: 10px;
+    border: 1px solid black;
+}
+#trilho.escuro{
+    background-color: #0e0e0d;
+    border: 1px solid black;
 }
 .botao_tema{
     position: absolute;
     margin: 4px;
     width: 30px;
     height: 30px;
-    background-color: #a5aaaa;
+    background-color: #f9d191;
     border-radius: 20px;
+    border: 1px solid black;
+    transition: .5s;
 }
 .botao_tema:hover{
     cursor: pointer;
+}
+.botao_tema.escuro{
+    margin-left: 66px;
+    background-color: #14091e;
+    transition: .5s;
 }
 #bloco_geral{
     display: flex;
@@ -47,31 +72,49 @@ html, body{
     width: 100%;
     max-width: 600px;
     min-height: 200px;
-    background-color: #fcefbb;
+    background-color: #fce3bc;
     border-radius: 25px;
     box-shadow: 3px 3px 5px #0000004a, -3px -3px 5px #0000004a;
+    transition: .5s;
 }
-input{
+.bloco_conteudo.escuro{
+    box-shadow: 3px 3px 5px #0b0510, -3px -3px 5px #0b0510;
+    background-color: #131311;
+}
+.digitar_cep{
     height: 30px;
     width: 200px;
-    border: 1px solid #fcd022;
+    border: 1px solid #f9bc5a;
     border-radius: 20px;
     outline: none;
     transition: .5s;
 }
-input:focus{
-    border: 1px solid #fcd022;
-    box-shadow: 0 0 5px #fcd022;
+.digitar_cep:focus{
+    border: 1px solid #f9bc5a;
+    box-shadow: 0 0 5px #f9bc5a;
     transition: .5s;
 }
-button{
+.digitar_cep.escuro{
+    border: 1px solid #0b0510;
+}
+.digitar_cep.escuro:focus{
+    border: 1px solid #7c0cd7;
+    box-shadow: 0 0 5px #7716c7;
+    transition: .5s;
+}
+.botao_consultar{
     width: 100px;
     height: 30px;
     border-radius: 20px;
     transition: .5s;
-    background-color: #f9e699;
+    background-color: #faeaaa;
+    transition: .5s;
 }
-button:hover{
+.botao_consultar.escuro{
+    background-color: #090800;
+    color: white;
+}
+.botao_consultar:hover{
     scale: 1.1;
     transition: .5s;
 }
