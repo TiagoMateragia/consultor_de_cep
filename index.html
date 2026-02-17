@@ -18,10 +18,12 @@
     <div id="bloco_geral">
         <div class="bloco_conteudo">
             <input class="digitar_cep" type="number" placeholder="Consulte seu CEP">
-            <button class="botao_consultar">Consultar</button>
+            <button class="botao_consultar" onclick="consultar_cep()">Consultar</button>
         </div>
 
         <div class="bloco_resultado">
+            <p class="msg_erro"></p>
+            
             <p class="logradouro"></p>
 
             <p class="complemento"></p>
