@@ -2,6 +2,7 @@ html, body{
     padding: 0;
     margin: 0;
     background-color: #F7E7CE;
+    overflow: hidden;
     transition: .5s;
 }
 html.escuro, body.escuro{
@@ -62,7 +63,9 @@ html.escuro, body.escuro{
     flex-direction: column;
     min-height: 70vh;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    gap: 2em;
 }
 .bloco_conteudo{
     display: flex;
@@ -117,4 +120,16 @@ html.escuro, body.escuro{
 .botao_consultar:hover{
     scale: 1.1;
     transition: .5s;
+}
+.bloco_resultado{
+    display: none;
+    flex-direction: column;
+    background-color: #fce3bc;
+    padding: 7px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px #0000004a, -3px -3px 5px #0000004a;
+}
+.linha1, .linha2, .linha3, .linha4{
+    display: flex;
+    gap: 15px;
 }

@@ -8,6 +8,7 @@ let cabecalho = document.getElementById('cabecalho');
 let conteudo = document.querySelector('.bloco_conteudo');
 let cep = document.querySelector('.digitar_cep');
 let botao_consultar = document.querySelector('.botao_consultar');
+let bloco_resultado = document.querySelector('.bloco_resultado');
 
 //Programando o botão de tema.
 botao_tema.addEventListener('click', ()=> {
@@ -39,6 +40,7 @@ botao_tema.addEventListener('click', ()=> {
 })
 
 //Variaveis para utilizar na função.
+let mostrar_conteudo = false;
 let msg_erro = document.querySelector('.msg_erro');
 let logradouro = document.querySelector('.logradouro');
 let complemento = document.querySelector('.complemento');
@@ -66,7 +68,7 @@ function consultar_cep(){
             let complemento_val = call_json.complemento;
             let unidade_val = call_json.unidade;
             let bairro_val = call_json.bairro;
-            let localidade_val = call_json.bairro;
+            let localidade_val = call_json.localidade;
             let uf_val = call_json.uf;
             let estado_val = call_json.estado;
             let regiao_val = call_json.regiao;
@@ -74,12 +76,57 @@ function consultar_cep(){
             let gia_val = call_json.gia;
             let ddd_val = call_json.ddd;
             let siafi_val = call_json.siafi;
-            console.log(call_json);
-        })
+            mostrar_conteudo = true;
+
+// Verificação para mostrar o resultado para o usuário e alteração no estilo da pagina.
+            if (mostrar_conteudo === true){
+                bloco_resultado.style.display = 'flex';
+                bloco_resultado.style.height = 'auto';
+                bloco_resultado.style.width = 'auto';
+                bloco_resultado.style.backgroundColor = "#fce3bc";
+                bloco_resultado.style.boxShadow = "3px 3px 5px #0000004a, -3px -3px 5px #0000004a";
+
+                logradouro.innerHTML = `<strong>Logradouro:</strong> ${logradouro_val}`;
+                complemento.innerHTML = `<strong>Complemento:</strong> ${complemento_val}`;
+                unidade.innerHTML = `<strong>Unidade:</strong> ${unidade_val}`;
+                bairro.innerHTML = `<strong>Bairro:</strong> ${bairro_val}`;
+                localidade.innerHTML = `<strong>Localidade:</strong> ${localidade_val}`;
+                uf.innerHTML = `<strong>UF:</strong> ${uf_val}`;
+                estado.innerHTML = `<strong>Estado:</strong> ${estado_val}`;
+                regiao.innerHTML = `<strong>Região:</strong> ${regiao_val}`;
+                ibge.innerHTML = `<strong>IBGE:</strong> ${ibge_val}`;
+                gia.innerHTML = `<strong>GIA:</strong> ${gia_val}`;
+                ddd.innerHTML = `<strong>DDD:</strong> ${ddd_val}`;
+                siafi.innerHTML = `<strong>Siafi:</strong> ${siafi_val}`;
+            }
+            })
         .catch((erro)=> {
+            mostrar_conteudo = false;
+            bloco_resultado.style.display = 'block';
+            bloco_resultado.style.height = '50px';
+            bloco_resultado.style.width = '160px';
+            bloco_resultado.style.backgroundColor = "#F7E7CE";
+            bloco_resultado.style.boxShadow = "none";
             msg_erro.innerHTML = "Não encontrado.";
             setTimeout(()=> {
                 msg_erro.innerHTML = '';
+                bloco_resultado.style.display = 'none';
             }, 3000);
+
+//Limpando o conteudo visivel caso não encontre o CEP.
+            if (mostrar_conteudo === false){
+                logradouro.innerHTML = "";
+                complemento.innerHTML = "";
+                unidade.innerHTML = "";
+                bairro.innerHTML = "";
+                localidade.innerHTML = "";
+                uf.innerHTML = "";
+                estado.innerHTML = "";
+                regiao.innerHTML = "";
+                ibge.innerHTML = "";
+                gia.innerHTML = "";
+                ddd.innerHTML = "";
+                siafi.innerHTML = "";
+            }
         })
 }
