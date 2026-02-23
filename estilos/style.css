@@ -129,6 +129,14 @@ html.escuro, body.escuro{
     border-radius: 25px;
     box-shadow: 3px 3px 5px #0000004a, -3px -3px 5px #0000004a;
 }
+.bloco_resultado.escuro{
+    background-color: #131311;
+    color: white;
+    box-shadow: 3px 3px 5px #0b0510, -3px -3px 5px #0b0510;
+}
+.bloco_erro{
+    text-align: center;
+}
 .linha1, .linha2, .linha3, .linha4{
     display: flex;
     gap: 15px;

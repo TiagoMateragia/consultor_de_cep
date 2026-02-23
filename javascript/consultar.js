@@ -20,6 +20,7 @@ botao_tema.addEventListener('click', ()=> {
     conteudo.classList.toggle('escuro');
     cep.classList.toggle('escuro');
     botao_consultar.classList.toggle('escuro');
+    bloco_resultado.classList.toggle('escuro');
 
 //Trocando a imagem para o tema escuro.
     if (body.classList.contains('escuro')) {
@@ -83,21 +84,19 @@ function consultar_cep(){
                 bloco_resultado.style.display = 'flex';
                 bloco_resultado.style.height = 'auto';
                 bloco_resultado.style.width = 'auto';
-                bloco_resultado.style.backgroundColor = "#fce3bc";
-                bloco_resultado.style.boxShadow = "3px 3px 5px #0000004a, -3px -3px 5px #0000004a";
-
-                logradouro.innerHTML = `<strong>Logradouro:</strong> ${logradouro_val}`;
-                complemento.innerHTML = `<strong>Complemento:</strong> ${complemento_val}`;
-                unidade.innerHTML = `<strong>Unidade:</strong> ${unidade_val}`;
-                bairro.innerHTML = `<strong>Bairro:</strong> ${bairro_val}`;
-                localidade.innerHTML = `<strong>Localidade:</strong> ${localidade_val}`;
-                uf.innerHTML = `<strong>UF:</strong> ${uf_val}`;
-                estado.innerHTML = `<strong>Estado:</strong> ${estado_val}`;
-                regiao.innerHTML = `<strong>Região:</strong> ${regiao_val}`;
-                ibge.innerHTML = `<strong>IBGE:</strong> ${ibge_val}`;
-                gia.innerHTML = `<strong>GIA:</strong> ${gia_val}`;
-                ddd.innerHTML = `<strong>DDD:</strong> ${ddd_val}`;
-                siafi.innerHTML = `<strong>Siafi:</strong> ${siafi_val}`;
+                
+                logradouro.innerHTML = `<strong>Logradouro:</strong> ${logradouro_val || "Não encontrado"}`;
+                complemento.innerHTML = `<strong>Complemento:</strong> ${complemento_val || "Não encontrado"}`;
+                unidade.innerHTML = `<strong>Unidade:</strong> ${unidade_val || "Não encontrado"}`;
+                bairro.innerHTML = `<strong>Bairro:</strong> ${bairro_val || "Não encontrado"}`;
+                localidade.innerHTML = `<strong>Localidade:</strong> ${localidade_val || "Não encontrado"}`;
+                uf.innerHTML = `<strong>UF:</strong> ${uf_val || "Não encontrado"}`;
+                estado.innerHTML = `<strong>Estado:</strong> ${estado_val || "Não encontrado"}`;
+                regiao.innerHTML = `<strong>Região:</strong> ${regiao_val || "Não encontrado"}`;
+                ibge.innerHTML = `<strong>IBGE:</strong> ${ibge_val || "Não encontrado"}`;
+                gia.innerHTML = `<strong>GIA:</strong> ${gia_val || "Não encontrado"}`;
+                ddd.innerHTML = `<strong>DDD:</strong> ${ddd_val || "Não encontrado"}`;
+                siafi.innerHTML = `<strong>Siafi:</strong> ${siafi_val || "Não encontrado"}`;
             }
             })
         .catch((erro)=> {
@@ -105,8 +104,6 @@ function consultar_cep(){
             bloco_resultado.style.display = 'block';
             bloco_resultado.style.height = '50px';
             bloco_resultado.style.width = '160px';
-            bloco_resultado.style.backgroundColor = "#F7E7CE";
-            bloco_resultado.style.boxShadow = "none";
             msg_erro.innerHTML = "Não encontrado.";
             setTimeout(()=> {
                 msg_erro.innerHTML = '';
