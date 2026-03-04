@@ -37,7 +37,7 @@ html.escuro, body.escuro{
     border: 1px solid black;
 }
 #trilho.escuro{
-    background-color: #0e0e0d;
+    background-color: #131311;
     border: 1px solid black;
 }
 .botao_tema{
@@ -83,6 +83,7 @@ html.escuro, body.escuro{
 .bloco_conteudo.escuro{
     box-shadow: 3px 3px 5px #0b0510, -3px -3px 5px #0b0510;
     background-color: #131311;
+    transition: .5s;
 }
 .digitar_cep{
     height: 30px;
@@ -128,11 +129,13 @@ html.escuro, body.escuro{
     padding: 7px;
     border-radius: 25px;
     box-shadow: 3px 3px 5px #0000004a, -3px -3px 5px #0000004a;
+    transition: .5s;
 }
 .bloco_resultado.escuro{
     background-color: #131311;
     color: white;
     box-shadow: 3px 3px 5px #0b0510, -3px -3px 5px #0b0510;
+    transition: .5s;
 }
 .bloco_erro{
     text-align: center;
@@ -140,4 +143,30 @@ html.escuro, body.escuro{
 .linha1, .linha2, .linha3, .linha4{
     display: flex;
     gap: 15px;
+}
+
+@media (max-width: 600px) {
+    html, body{
+        overflow-y: auto;
+    }
+    .bloco_conteudo{
+        width: 100%;
+        max-width: 400px;
+        margin: 12px;
+    }
+    .bloco_resultado{
+        width: 100%;
+        max-width: 400px;
+        margin: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .bloco_conteudo{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        width: 100%;
+        max-width: 300px;
+    }
 }

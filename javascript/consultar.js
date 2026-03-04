@@ -58,7 +58,7 @@ let siafi = document.querySelector('.siafi');
 
 //Função para chamada da API e consultar o CEP digitado no input.
 function consultar_cep(){
-    let cep_val = cep.value;
+    let cep_val = cep.value.trim().replace(/\D/g, '');
 
     fetch(`https://viacep.com.br/ws/${cep_val}/json/`)
         .then((call)=> {
